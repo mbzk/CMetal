@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from cmetal.link/auction.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Oct 2023 08:53:19 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fav Icon  -->
+    <link rel="icon" href="favicons/favicon.ico" />
+    <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="favicons/manifest.json" />
+    <title>cMetal | Auction</title>
+    <script
+      src="../code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/flipclock.css" />
+    <!-- END VENDOR CSS-->
+    <!-- END CRYPTO CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/template-counter.css"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="header-logo">
+        <img class="logo-light" src="images/logo/logo.png" alt="logo" />
+        <h2 class="brand-name">cMetal</h2>
+      </div>
+      <div class="clock-counter">
+        <div class="heading">
+          <h1>Auction will start in:</h1>
+        </div>
+        <div class="clock"></div>
+        <div class="message"></div>
+      </div>
+      <div class="link">
+        <a href="index-2.html">Go To Home</a>
+      </div>
+    </div>
+    <script src="assets/js/flipclock.min.js"></script>
+    <script>
+      var clock;
+      clock = $(".clock").FlipClock({
+        clockFace: "DailyCounter",
+        autoStart: false,
+        callbacks: {
+          stop: function () {
+            $(".message").html("The clock has stopped!");
+          },
+        },
+      });
+      clock.setTime(8100000);
+      clock.setCountdown(true);
+      clock.start();
+    </script>
+  </body>
+
+<!-- Mirrored from cmetal.link/auction.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Oct 2023 08:53:21 GMT -->
+</html>
