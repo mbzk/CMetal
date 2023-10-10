@@ -8164,7 +8164,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 
 .tc-genitian-dark-alt { color: #132582 !important; }
 
-.tc-azalea { color: #0f1932 !important; }
+.tc-azalea { color: #141416 !important; }
 
 .tc-azalea-alt { color: #1c2640 !important; }
 
@@ -8256,7 +8256,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 
 .bg-genitian-grad-alt { background-image: linear-gradient(90deg, #1940b0 0%, #122272 100%) !important; }
 
-.bg-azalea { background-color: #0f1932 !important; }
+.bg-azalea { background-color: #141416 !important; }
 
 .bg-azalea-alt { background-color: #1c2640 !important; }
 
@@ -8264,9 +8264,9 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 
 .bg-azalea-dark-alt { background-color: #030610 !important; }
 
-.bg-azalea-grad { background-image: linear-gradient(90deg, #0f1932 0%, #1c2640 100%) !important; }
+.bg-azalea-grad { background-image: linear-gradient(90deg, #141416 0%, #1c2640 100%) !important; }
 
-.bg-azalea-grad-alt { background-image: linear-gradient(90deg, #1c2640 0%, #0f1932 100%) !important; }
+.bg-azalea-grad-alt { background-image: linear-gradient(90deg, #1c2640 0%, #141416 100%) !important; }
 
 .bg-zinnia { background-color: #fe4350 !important; }
 
