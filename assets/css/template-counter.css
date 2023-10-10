@@ -1,0 +1,240 @@
+/* 	----------------------------------------------------------------------------------------------
+*	File Name: template-counter.scss
+* 	Description: Counter Template Specific CSS
+* 	----------------------------------------------------------------------------------------------
+* 	Item Name: Crypto ICO - Cryptocurrency Website Landing Page HTML Template
+* 	Version: 1.0
+* 	Author: PIXINVENT
+* 	Author URL: http://www.themeforest.net/user/pixinvent
+* 	----------------------------------------------------------------------------------------------*/
+/*  Basic reboot css
+    -------------------------------------------------------------------------------------------*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Light.eot");
+  src: local("Quicksand Light"), local("Quicksand-Light"),
+    url("../fonts/Quicksand-Lightd41d.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Quicksand-Light.woff2") format("woff2"),
+    url("../fonts/Quicksand-Light.woff") format("woff"),
+    url("../fonts/Quicksand-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Medium.eot");
+  src: local("Quicksand Medium"), local("Quicksand-Medium"),
+    url("../fonts/Quicksand-Mediumd41d.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Quicksand-Medium.woff2") format("woff2"),
+    url("../fonts/Quicksand-Medium.woff") format("woff"),
+    url("../fonts/Quicksand-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Bold.eot");
+  src: local("Quicksand Bold"), local("Quicksand-Bold"),
+    url("../fonts/Quicksand-Boldd41d.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Quicksand-Bold.woff2") format("woff2"),
+    url("../fonts/Quicksand-Bold.woff") format("woff"),
+    url("../fonts/Quicksand-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #141416;
+  line-height: 1.6;
+  letter-spacing: 0.25px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+}
+
+p {
+  font-size: 0.938rem;
+}
+
+.link {
+  margin-top: 200px;
+  margin-left: 50%;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Comfortaa", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: 0.25rem;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0.25s ease-out;
+  background-color: #ffffff;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.header-logo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 100px;
+}
+
+.header-logo h2 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+}
+
+/*  Theme type css
+    -------------------------------------------------------------------------------------------*/
+
+ul {
+  font-size: 0.938rem;
+  list-style: none;
+}
+
+/*	Modification of flipclock CSS
+* 	----------------------------------------------------------------------------------------------*/
+
+.clock-counter {
+  margin-top: 6.5%;
+}
+
+.clock-counter .flip-clock-divider {
+  width: 16px;
+}
+
+.clock-counter .heading {
+  margin: 0 0 3em 1em;
+}
+
+.clock-counter .heading h1 {
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "Comfortaa", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+.clock-counter .flip-clock-divider:first-child {
+  width: 0;
+}
+.clock-counter .flip-clock-divider .flip-clock-label {
+  font-family: "Comfortaa", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  right: -70px;
+}
+.clock-counter .flip-clock-divider.minutes .flip-clock-label,
+.clock-counter .flip-clock-divider.seconds .flip-clock-label {
+  right: -80px;
+}
+
+.clock-counter .flip .inn {
+  font-family: "Comfortaa", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.clock-counter .flip-clock-wrapper ul {
+  width: 60px;
+  height: 90px;
+  background: #ffffff !important;
+}
+.clock-counter .flip-clock-wrapper ul li {
+  line-height: 5.7rem;
+}
+.clock-counter .flip-clock-wrapper ul li a {
+  color: #3f3f3f !important;
+}
+.clock-counter .flip-clock-wrapper ul li a div.up {
+  height: 52%;
+  top: -2px;
+}
+.clock-counter .flip-clock-wrapper ul li a div.up:after {
+  top: 45px;
+  height: 1px;
+  background-color: #000000 !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.clock-counter .flip-clock-wrapper ul li a div.up div.inn {
+  text-shadow: 0 1px 2px #ffffff !important;
+  background-color: #ffffff !important;
+  color: #3f3f3f !important;
+}
+.clock-counter .flip-clock-wrapper ul li a div.down {
+  height: 51%;
+}
+.clock-counter .flip-clock-wrapper ul li a div.down div.inn {
+  text-shadow: 0 1px 2px #ffffff !important;
+  background-color: #ffffff !important;
+  color: #3f3f3f !important;
+}
+.clock-counter .flip-clock-wrapper ul.play li.flip-clock-before .up .shadow,
+.clock-counter .flip-clock-wrapper ul.play li.flip-clock-active .up .shadow {
+  background: transparent !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+.clock-counter .flip-clock-wrapper ul.play li.flip-clock-before .down .shadow,
+.clock-counter .flip-clock-wrapper ul.play li.flip-clock-active .down .shadow {
+  background: transparent !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+
+.clock-counter .flip-clock-wrapper .flip-clock-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.clock-counter .flip-clock-wrapper .flip,
+.clock-counter .flip-clock-wrapper .flip-clock-dot {
+  background: #ffffff;
+  -webkit-box-shadow: 2px 1px 11px rgba(0, 0, 0, 0.37) !important;
+  box-shadow: 2px 1px 11px rgba(0, 0, 0, 0.37) !important;
+}
+.clock-counter .flip-clock-wrapper .flip.top,
+.clock-counter .flip-clock-wrapper .flip-clock-dot.top {
+  top: 24px;
+}
+.clock-counter .flip-clock-wrapper .flip.bottom,
+.clock-counter .flip-clock-wrapper .flip-clock-dot.bottom {
+  bottom: 48px;
+}
+
+.clock-counter .flip-clock-wrapper .flip-clock-meridium a {
+  color: #ffffff !important;
+}
+
+.clock-counter .flip-clock-wrapper .flip-clock-divider .flip-clock-label {
+  color: #ffffff !important;
+}
