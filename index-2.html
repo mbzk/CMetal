@@ -29,10 +29,63 @@
       type="text/javascript"
       src="../cdn.jsdelivr.net/npm/%40emailjs/browser%403/dist/email.min.js"
     ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("DZ0HOc6aJfDIXuszI");
-      })();
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+     const firebaseConfig = {
+      apiKey: "AIzaSyB3vC5Yt03pOCBq4cJN-QxYjOr19TYZuGQ",
+  authDomain: "cmetal.firebaseapp.com",
+  databaseURL: "https://cmetal-default-rtdb.firebaseio.com",
+  projectId: "cmetal",
+  storageBucket: "cmetal.appspot.com",
+  messagingSenderId: "440012353023",
+  appId: "1:440012353023:web:4f80fa5022ed01b3580bca",
+  measurementId: "G-K9Q13QLZBQ"
+  };
+  
+  // Initialize Firebase
+  const firebase = initializeApp(firebaseConfig);
+  
+  function sendMails() {
+    const email = document.getElementById("email").value;
+  
+    if (email) {
+        sendNewsletter(email)
+            .then(function(response) {
+                console.log("Newsletter subscription successful", response);
+                // Handle success, e.g., show a success message to the user
+  
+                // Save the email to Firebase (optional)
+                const database = firebase.database();
+                const subscribersRef = database.ref("subscribers");
+                subscribersRef.push().set({
+                    email: email,
+                });
+                successMessage.classList.remove("hidden");
+  
+  // Optional: Hide the success message after a few seconds
+  setTimeout(function() {
+    successMessage.classList.add("hidden");
+  }, 3000);
+  
+  // Clear the email input
+  document.getElementById("email").value = "";
+            })
+            
+            .catch(function(error) {
+                console.error("Newsletter subscription failed", error);
+                // Handle errors, e.g., show an error message to the user
+            });
+  
+        // Prevent the form from submitting normally
+        return false;
+    }
+  }
+  
     </script>
   </head>
 
@@ -2276,7 +2329,7 @@ traditional systems.
                         back to you shortly.
                       </p>
                     </div>
-                    <form class="nk-form-submit" onsubmit="sendMail();">
+                    <form class="nk-form-submit" onsubmit="sendMails();">
                       <div class="row">
                         <div class="col-sm-6">
                           <div

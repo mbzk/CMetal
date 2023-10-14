@@ -8253,7 +8253,9 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 .bg-genitian-dark-alt { background-color: #132582 !important; }
 
 .bg-genitian-grad { background-image: linear-gradient(90deg, #122272 0%, #1940b0 100%) !important; }
-
+.hidden {
+  display: none;
+}
 .bg-genitian-grad-alt { background-image: linear-gradient(90deg, #1940b0 0%, #122272 100%) !important; }
 
 .bg-azalea { background-color: #141416 !important; }

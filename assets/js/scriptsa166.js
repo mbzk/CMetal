@@ -61,42 +61,7 @@ function customScroll(id) {
   window.scroll(0, Position(element));
 }
 
-function sendMail() {
-  var emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  let from_name = document.getElementById("from-name").value,
-    email = document.getElementById("email").value,
-    message = document.getElementById("msg").value;
-
-  if (!email.match(emailRegex) || !from_name || !message) {
-    return;
-  }
-
-  let tempParams = {
-    from_name,
-    email,
-    message,
-  };
-
-  console.log(tempParams);
-
-  if (tempParams.from_name && tempParams.email && tempParams.message) {
-    emailjs
-      .send("service_f1lyl5h", "template_tm4io7o", tempParams)
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          alert("Your response has been recorded!");
-          document.getElementById("from-name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("msg").value = "";
-        }
-      });
-  }
-
-  console.log("check");
-}
 
 NioApp = (function (NioApp, $, window, document) {
   "use strict";

@@ -12,7 +12,9 @@
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
+.hidden {
+  display: none;
+}
 .flip-clock-wrapper a {
   cursor: pointer;
   text-decoration: none;

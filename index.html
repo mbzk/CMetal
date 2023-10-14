@@ -24,17 +24,72 @@
     <link rel="stylesheet" href="assets/css/style-azaleaa166.css?ver=200" />
     <!-- Extra CSS -->
     <link rel="stylesheet" href="assets/css/themea166.css?ver=200" />
-    <script
-      type="text/javascript"
-      src="../cdn.jsdelivr.net/npm/%40emailjs/browser%403/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("DZ0HOc6aJfDIXuszI");
-      })();
-    </script>
-  </head>
+ 
+   
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"; // Add this import
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+   const firebaseConfig = {
+    apiKey: "AIzaSyB3vC5Yt03pOCBq4cJN-QxYjOr19TYZuGQ",
+authDomain: "cmetal.firebaseapp.com",
+databaseURL: "https://cmetal-default-rtdb.firebaseio.com",
+projectId: "cmetal",
+storageBucket: "cmetal.appspot.com",
+messagingSenderId: "440012353023",
+appId: "1:440012353023:web:4f80fa5022ed01b3580bca",
+measurementId: "G-K9Q13QLZBQ"
+};
 
+// Initialize Firebase
+async function sendMails() {
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("from-name").value;
+
+  if (email) {
+    try {
+      // Initialize Firebase and get a reference to the Realtime Database
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+
+      // Save the email to Firebase (optional)
+      const subscribersRef = ref(database, "subscribers");
+      await push(subscribersRef, {
+        name:name,
+        email: email,
+      });
+
+      console.log("Newsletter subscription successful");
+
+      // Show success message
+      const successMessage = document.getElementById("successMessage");
+      successMessage.classList.remove("hidden");
+
+      // Optional: Hide the success message after a few seconds
+      setTimeout(function() {
+        successMessage.classList.add("hidden");
+      }, 3000);
+
+      // Clear the email input
+      document.getElementById("email").value = "";
+
+      // Prevent the form from submitting normally
+      return false;
+    } catch (error) {
+      console.error("Newsletter subscription failed", error);
+      // Handle errors, e.g., show an error message to the user
+    }
+  }
+}
+
+window.sendMails = sendMails;
+  </script>
+  </head>
+  
   <body class="nk-body body-wider bg-theme">
     <div class="nk-wrap">
       <header
@@ -2275,7 +2330,7 @@
                         back to you shortly.
                       </p>
                     </div>
-                    <form class="nk-form-submit" onsubmit="return sendMail();">
+                    <form class="nk-form-submit" onsubmit="return sendMails();">
                       <div class="row">
                         <div class="col-sm-6">
                           <div
@@ -2458,32 +2513,18 @@
         ><img class="spinner-brand" src="images/logo/logo.png" alt=""
       /></span>
     </div>
+      <!-- Success Alert -->
+     <!-- Success Alert -->
+     <div id="successMessage" class="alert hidden" style="background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; text-align: center; position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 1000; width: 300px;">
+      Successfully subscribed to our newsletter!
+    </div>
+
     <!-- JavaScript -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="assets/js/jquery.bundlea166.js?ver=200"></script>
     <script src="assets/js/scriptsa166.js?ver=200"></script>
     <script src="assets/js/chartsa166.js?ver=200"></script>
     <script src="assets/js/toastr.examplesa166.js?ver=200"></script>
-    <script>
-      emailjs.init("YOUR_USER_ID");
-    
-      function sendMail() {
-        emailjs.send("service_f1lyl5h", "template_tm4io7o", {
-          "from_name": document.getElementById("from-name").value,
-          "email": document.getElementById("email").value,
-          "message": document.getElementById("msg").value,
-        })
-        .then(function(response) {
-          console.log("Email sent successfully", response);
-          // Handle success here, e.g., display a success message to the user
-        }, function(error) {
-          console.error("Email could not be sent", error);
-          // Handle errors here, e.g., display an error message to the user
-        });
-        return false; // Prevent the form from submitting normally
-      }
-    </script>
-    
+  
 
   </body>
 
